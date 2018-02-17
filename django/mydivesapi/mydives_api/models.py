@@ -26,7 +26,8 @@ def __str__(self):
     return self.email
 
 class UserManager(BaseUserManager):
-    def create_user(self, name, email password = None):
+
+    def create_user(self, name, email, password = None):
 
         if not email:
             raise ValueError('Please enter an email address')
@@ -39,3 +40,15 @@ class UserManager(BaseUserManager):
         user.set_password(password)
         user.save(using = self._db)
         return user
+
+def create_superuser(self, name, email, password):
+
+    user = self.create_user(
+                name,
+                email,
+                password = password
+                )
+
+                user.is_admin = True
+                user.save(using = self._db)
+    return user 
