@@ -1,5 +1,5 @@
 from django.contrib import admin
-from mydivesapi.mydives_api import models
+from . import models
 
 # Register your models here.
 
