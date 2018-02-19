@@ -20,3 +20,14 @@ class ListLocations(APIView):
         ]
 
         return Response({'Location' : sampleDictionaryLocation})
+
+
+    def post(self, request, format = None):
+        serializer = serializers.LocationSerializer(data = request.data)
+
+        if serializer.is_valid():
+            userMessage_dataIsValid = 'Location Added!'
+            return Response({'userMessage' : userMessage})
+        else: 
+            userMessage_dataIsValid = 'Please try again '
+            return Response({'userMessage_dataIsValid' : userMessage_dataIsValid})
