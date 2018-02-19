@@ -29,5 +29,5 @@ class ListLocations(APIView):
             userMessage_dataIsValid = 'Location Added!'
             return Response({'userMessage' : userMessage_dataIsValid})
         else:
-            userMessage_dataIsNotValid = 'Please try again '
-            return Response(serializer.errors)
+            userMessage_dataIsNotValid = 'Please try again'
+            return Response('Error', serializer.errors)
