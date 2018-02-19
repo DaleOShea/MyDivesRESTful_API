@@ -31,3 +31,7 @@ class ListLocations(APIView):
         else:
             userMessage_dataIsNotValid = 'Please try again'
             return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
+
+
+    def delete(self, request, pk = None):
+        return Response(status = status.HTTP_204_N0_CONTENT) 
