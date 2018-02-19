@@ -7,7 +7,7 @@ from rest_framework import status
 
 class ListLocations(APIView):
 
-    serializer = serializers.LocationSerializer
+    serializer_class = serializers.LocationSerializer
 
     def get(self, request, format = None):
 
@@ -22,12 +22,12 @@ class ListLocations(APIView):
         return Response({'Location' : sampleDictionaryLocation})
 
 
-    def post(self, request, format = None):
+    def post(self, request):
         serializer = serializers.LocationSerializer(data = request.data)
 
         if serializer.is_valid():
             userMessage_dataIsValid = 'Location Added!'
-            return Response({'userMessage' : userMessage})
+            return Response({'userMessage' : userMessage_dataIsValid})
         else:
             userMessage_dataIsNotValid = 'Please try again '
             return Response(serializer.errors)
