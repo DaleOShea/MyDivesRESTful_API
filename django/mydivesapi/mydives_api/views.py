@@ -28,6 +28,6 @@ class ListLocations(APIView):
         if serializer.is_valid():
             userMessage_dataIsValid = 'Location Added!'
             return Response({'userMessage' : userMessage})
-        else: 
-            userMessage_dataIsValid = 'Please try again '
-            return Response({'userMessage_dataIsValid' : userMessage_dataIsValid})
+        else:
+            userMessage_dataIsNotValid = 'Please try again '
+            return Response(serializer.errors)
