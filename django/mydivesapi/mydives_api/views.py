@@ -79,5 +79,5 @@ class LocationViewSet(viewsets.ModelViewSet):
     filter_backends = (filters.SearchFilter,)
     search_fields = ('LocType', 'location', 'details')
 
-    authentication_classes = (authentication.TokenAuthentication)
-    permission_classes = (permissions.allowAccessToUserContent)
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (permissions.allowAccessToUserOwnContent)
