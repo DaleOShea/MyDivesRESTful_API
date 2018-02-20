@@ -8,7 +8,20 @@ from . import models
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
 from rest_framework.authentication import TokenAuthentication
+from rest_framework.authtoken.serializers import AuthTokenSerializer
+from rest_framework.authtoken.views import ObtainAuthToken
 from . import permissions
+
+
+# ref point: https://github.com/encode/django-rest-framework/issues/2414
+# Ref point: https://stackoverflow.com/questions/35266636/override-the-authtoken-views-in-django-rest
+
+class LoginView(viewsets.ViewSet):
+    serializer_class = AuthTokenSerializer
+
+    def create(self, request):
+        return ObtainAuthToken().post(request)
+
 
 
 
