@@ -4,7 +4,7 @@ from rest_framework.routers import DefaultRouter
 from django.conf.urls import include
 
 router = DefaultRouter()
-router.register('MyDives', views.MyDivesViewSet)
+router.register('MyDives', views.MyDivesViewSet, base_name ='MyDives')
 
 urlpatterns = [
     url(r'^diving_locations', views.ListLocations.as_view()),
