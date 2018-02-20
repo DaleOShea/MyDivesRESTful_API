@@ -67,3 +67,7 @@ class MyDivesViewSet(viewsets.ViewSet):
 
     def destroy(self, request, pk=None):
         pass
+
+class LocationViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.LocationInfoSerializer
+    queryset = models.LocationInfo.objects.all()
