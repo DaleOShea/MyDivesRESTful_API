@@ -80,3 +80,4 @@ class LocationViewSet(viewsets.ModelViewSet):
     search_fields = ('LocType', 'location', 'details')
 
     authentication_classes = (authentication.TokenAuthentication)
+    permission_classes = (permissions.allowAccessToUserContent)
