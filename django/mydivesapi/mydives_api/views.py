@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from . import serializers
 from rest_framework import status
 from rest_framework import viewsets
+from . import models
 
 
 class ListLocations(APIView):
@@ -50,7 +51,7 @@ class MyDivesViewSet(viewsets.ViewSet):
         ]
 
         return Response({'ViewSet' :sampleViewSetTestingDictionary})
-    
+
 
     def create(self, request):
         pass
