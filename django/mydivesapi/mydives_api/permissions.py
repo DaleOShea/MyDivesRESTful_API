@@ -3,7 +3,7 @@ from rest_framework import permissions
 
 # Ref Point: http://www.django-rest-framework.org/api-guide/permissions/#custom-permissions
 
-def allowAccessToUserOwnContent(permissions.BasePermission):
+class allowAccessToUserOwnContent(permissions.BasePermission):
 
 
     def has_object_permission(self, request, view, obj):
