@@ -8,6 +8,7 @@ from . import models
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
 from rest_framework.authentication import TokenAuthentication
+from . import permissions
 
 
 
@@ -80,4 +81,4 @@ class LocationViewSet(viewsets.ModelViewSet):
     search_fields = ('LocType', 'location', 'details')
 
     authentication_classes = (TokenAuthentication,)
-    permission_classes = (permissions.allowAccessToUserOwnContent)
+    permission_classes = (permissions.allowAccessToUserOwnContent,)
