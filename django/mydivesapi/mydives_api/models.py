@@ -4,6 +4,16 @@ from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.models import BaseUserManager
 
 
+
+class LocationInfo(models.Model):
+    
+    LocType = models.CharField(max_length=400, blank=True, default='')
+    location = models.CharField(max_length=400, blank=True, default='')
+    latitude = models.CharField(max_length=400, blank=True, default='')
+    longitude = models.CharField(max_length=400, blank=True, default='')
+    details = models.CharField(max_length=400, blank=True, default='')
+
+
 class UserManager(BaseUserManager):
     def create_user(self, name, email, password = None):
 

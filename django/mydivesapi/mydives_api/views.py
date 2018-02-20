@@ -50,7 +50,6 @@ class MyDivesViewSet(viewsets.ViewSet):
         ]
 
         return Response({'ViewSet' :sampleViewSetTestingDictionary})
-
     
 
     def create(self, request):
