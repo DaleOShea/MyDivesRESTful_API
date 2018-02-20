@@ -49,4 +49,4 @@ class MyDivesViewSet(viewsets.ViewSet):
             'Five_View',
         ]
 
-        return Response({'ViewSet',sampleViewSetTestingDictionary})
+        return Response({'ViewSet' :sampleViewSetTestingDictionary})
