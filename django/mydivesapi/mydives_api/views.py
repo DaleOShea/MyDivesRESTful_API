@@ -3,7 +3,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from . import serializers
 from rest_framework import status
-# Create your views here.
+from rest_framework import viewsets
+
 
 class ListLocations(APIView):
 
@@ -34,4 +35,7 @@ class ListLocations(APIView):
 
 
     def delete(self, request, pk = None):
-        return Response(status = status.HTTP_204_N0_CONTENT) 
+        return Response(status = status.HTTP_204_N0_CONTENT)
+
+class MyDivesViewSet(viewsets.ViewSet):
+    
