@@ -38,4 +38,15 @@ class ListLocations(APIView):
         return Response(status = status.HTTP_204_N0_CONTENT)
 
 class MyDivesViewSet(viewsets.ViewSet):
-    
+
+    def list(self, request):
+
+        sampleViewSetTestingDictionary = [
+            'One_View',
+            'Two_View',
+            'Three_View',
+            'Four_View',
+            'Five_View',
+        ]
+
+        return Response({'ViewSet',sampleViewSetTestingDictionary})
