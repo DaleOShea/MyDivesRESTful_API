@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'mydives_api.apps.MydivesApiConfig',
-    'DEFAULT_FILTER_BACKENDS'
+    
 ]
 
 MIDDLEWARE = [

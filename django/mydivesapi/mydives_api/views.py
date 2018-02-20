@@ -5,6 +5,7 @@ from . import serializers
 from rest_framework import status
 from rest_framework import viewsets
 from . import models
+from django_filters.rest_framework import DjangoFilterBackend
 
 
 class ListLocations(APIView):
@@ -71,3 +72,5 @@ class MyDivesViewSet(viewsets.ViewSet):
 class LocationViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.LocationInfoSerializer
     queryset = models.LocationInfo.objects.all()
+    filter_backends = (filters.SearchFilter)
+    search_fields = ('LocType', 'location', 'details')
