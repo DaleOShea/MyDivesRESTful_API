@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'mydives_api.apps.MydivesApiConfig',
-    
+    'django_filters',
+
 ]
 
 MIDDLEWARE = [
