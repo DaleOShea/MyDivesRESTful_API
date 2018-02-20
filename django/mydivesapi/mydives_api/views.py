@@ -73,5 +73,5 @@ class MyDivesViewSet(viewsets.ViewSet):
 class LocationViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.LocationInfoSerializer
     queryset = models.LocationInfo.objects.all()
-    filter_backends = (filters.SearchFilter)
+    filter_backends = (filters.SearchFilter,)
     search_fields = ('LocType', 'location', 'details')
