@@ -9,7 +9,7 @@ class LocationSerializer(serializers.Serializer):
 class LocationInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.LocationInfo
-        fields = ('id', 'LocType', 'location', 'latitude', 'longitude', 'details')
+        fields = ('id', 'LocType', 'location', 'latitude', 'longitude', 'url')
 
 
     def create(self, validated_data):
@@ -18,7 +18,7 @@ class LocationInfoSerializer(serializers.ModelSerializer):
             location = validated_data['location'],
             latitude = validated_data['latitude'],
             longitude = validated_data['longitude'],
-            details = validated_data['details'],
+            url = validated_data['details'],
         )
 
         location.save()
