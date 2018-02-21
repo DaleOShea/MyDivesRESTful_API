@@ -11,7 +11,7 @@ class LocationInfo(models.Model):
     location = models.CharField(max_length=255, blank=True, default='')
     latitude = models.CharField(max_length=255, blank=True, default='')
     longitude = models.CharField(max_length=255, blank=True, default='')
-    details = models.CharField(max_length=255, blank=True, default='')
+    url = models.CharField(max_length=255, blank=True, default='')
 
 
 class UserManager(BaseUserManager):
